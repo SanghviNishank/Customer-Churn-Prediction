@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+.ipynb_checkpoints/
+# generated model artifacts: rebuild with `python train_model.py`
+models/*.joblib
+models/*.csv
+# keep metadata.json out of git too if you prefer; it is small and reproducible
+.streamlit/secrets.toml
+.env
+*.log

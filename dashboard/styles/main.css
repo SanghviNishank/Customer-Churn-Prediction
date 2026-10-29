@@ -1,0 +1,80 @@
+/* Modern styling for Customer Churn Analytics Dashboard */
+:root {
+  --primary-color: #0072b2;
+  --churn-color: #d55e00;
+  --success-color: #009e73;
+  --warning-color: #e69f00;
+  --bg-subtle: rgba(128, 128, 128, 0.06);
+  --border-subtle: rgba(128, 128, 128, 0.18);
+}
+
+.block-container {
+  padding-top: 1.8rem;
+  padding-bottom: 2.5rem;
+  max-width: 1440px;
+}
+
+/* Metric KPI Cards */
+div[data-testid="stMetric"] {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  padding: 14px 18px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+div[data-testid="stMetric"] label {
+  font-weight: 600;
+  color: #4a5568;
+}
+
+/* Card Container */
+.churn-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-success {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.badge-danger {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.badge-warning {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.badge-info {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+/* Pipeline Step Box */
+.pipeline-step {
+  border-left: 4px solid var(--primary-color);
+  padding: 10px 16px;
+  margin: 10px 0;
+  background: var(--bg-subtle);
+  border-radius: 0 8px 8px 0;
+}
+

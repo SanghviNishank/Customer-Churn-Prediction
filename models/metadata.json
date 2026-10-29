@@ -1,0 +1,595 @@
+{
+  "created_utc": "2026-10-29T08:58:11+00:00",
+  "versions": {
+    "python": "3.12.10",
+    "scikit-learn": "1.9.1",
+    "pandas": "2.2.3",
+    "numpy": "2.5.4",
+    "xgboost": "3.4.1"
+  },
+  "dataset": {
+    "file": "WA_Fn-UseC_-Telco-Customer-Churn.csv",
+    "sha256": "16320c9c1ec72448db59aa0a26a0b95401046bef5d02fd3aeb906448e3055e91",
+    "rows_raw": 7043,
+    "rows_used": 7032,
+    "rows_dropped_blank_totalcharges": 11
+  },
+  "split": {
+    "test_size": 0.2,
+    "random_state": 42,
+    "stratified": true,
+    "n_train": 5625,
+    "n_test": 1407,
+    "test_churn_rate": 0.2658137882018479
+  },
+  "numeric_features": [
+    "tenure",
+    "MonthlyCharges",
+    "TotalCharges",
+    "NumberOfServices"
+  ],
+  "categorical_features": [
+    "gender",
+    "SeniorCitizen",
+    "Partner",
+    "Dependents",
+    "PhoneService",
+    "MultipleLines",
+    "InternetService",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies",
+    "Contract",
+    "PaperlessBilling",
+    "PaymentMethod",
+    "TenureGroup"
+  ],
+  "raw_input_columns": [
+    "gender",
+    "SeniorCitizen",
+    "Partner",
+    "Dependents",
+    "tenure",
+    "PhoneService",
+    "MultipleLines",
+    "InternetService",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies",
+    "Contract",
+    "PaperlessBilling",
+    "PaymentMethod",
+    "MonthlyCharges",
+    "TotalCharges"
+  ],
+  "allowed_values": {
+    "gender": [
+      "Female",
+      "Male"
+    ],
+    "SeniorCitizen": [
+      0,
+      1
+    ],
+    "Partner": [
+      "No",
+      "Yes"
+    ],
+    "Dependents": [
+      "No",
+      "Yes"
+    ],
+    "PhoneService": [
+      "No",
+      "Yes"
+    ],
+    "MultipleLines": [
+      "No",
+      "No phone service",
+      "Yes"
+    ],
+    "InternetService": [
+      "DSL",
+      "Fiber optic",
+      "No"
+    ],
+    "OnlineSecurity": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "OnlineBackup": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "DeviceProtection": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "TechSupport": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "StreamingTV": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "StreamingMovies": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "Contract": [
+      "Month-to-month",
+      "One year",
+      "Two year"
+    ],
+    "PaperlessBilling": [
+      "No",
+      "Yes"
+    ],
+    "PaymentMethod": [
+      "Bank transfer (automatic)",
+      "Credit card (automatic)",
+      "Electronic check",
+      "Mailed check"
+    ]
+  },
+  "selected_model": "XGBoost (notebook-tuned)",
+  "selected_threshold": 0.4,
+  "xgboost_available_at_training": true,
+  "cv_roc_auc_5fold_on_train": {
+    "mean": 0.8483107533586531,
+    "std": 0.017375346803852252,
+    "folds": [
+      0.8371589721995029,
+      0.8741385732911158,
+      0.847714739203317,
+      0.8236838695571195,
+      0.8588576125422109
+    ]
+  },
+  "models": [
+    {
+      "model": "DummyClassifier",
+      "params_source": "baseline",
+      "train": {
+        "Accuracy": 0.7342222222222222,
+        "Precision": 0.0,
+        "Recall": 0.0,
+        "F1": 0.0,
+        "ROC-AUC": 0.5
+      },
+      "test_at_0.5": {
+        "Accuracy": 0.7341862117981521,
+        "Precision": 0.0,
+        "Recall": 0.0,
+        "F1": 0.0,
+        "ROC-AUC": 0.5
+      }
+    },
+    {
+      "model": "LogisticRegression (notebook-tuned)",
+      "params_source": "notebook best params: C=10, l2, liblinear",
+      "train": {
+        "Accuracy": 0.8087111111111112,
+        "Precision": 0.6721446179129006,
+        "Recall": 0.5471571906354515,
+        "F1": 0.6032448377581121,
+        "ROC-AUC": 0.8521575550462802
+      },
+      "test_at_0.5": {
+        "Accuracy": 0.7924662402274343,
+        "Precision": 0.6305732484076433,
+        "Recall": 0.5294117647058824,
+        "F1": 0.5755813953488372,
+        "ROC-AUC": 0.8344873195251875
+      }
+    },
+    {
+      "model": "DecisionTree (notebook-tuned)",
+      "params_source": "notebook best params: max_depth=5, min_samples_split=2, min_samples_leaf=1",
+      "train": {
+        "Accuracy": 0.7991111111111111,
+        "Precision": 0.6201448321263989,
+        "Recall": 0.6301003344481605,
+        "F1": 0.6250829462508295,
+        "ROC-AUC": 0.8531563646375733
+      },
+      "test_at_0.5": {
+        "Accuracy": 0.7896233120113717,
+        "Precision": 0.6020942408376964,
+        "Recall": 0.6149732620320856,
+        "F1": 0.6084656084656085,
+        "ROC-AUC": 0.8296250472379394
+      }
+    },
+    {
+      "model": "RandomForest (default params)",
+      "params_source": "library defaults",
+      "train": {
+        "Accuracy": 0.9987555555555555,
+        "Precision": 0.9986595174262735,
+        "Recall": 0.9966555183946488,
+        "F1": 0.9976565115500502,
+        "ROC-AUC": 0.9999523836517205
+      },
+      "test_at_0.5": {
+        "Accuracy": 0.7803837953091685,
+        "Precision": 0.6072607260726073,
+        "Recall": 0.4919786096256685,
+        "F1": 0.5435745937961596,
+        "ROC-AUC": 0.8141012367280802
+      }
+    },
+    {
+      "model": "AdaBoost (default params)",
+      "params_source": "library defaults",
+      "train": {
+        "Accuracy": 0.8067555555555556,
+        "Precision": 0.6683168316831684,
+        "Recall": 0.5418060200668896,
+        "F1": 0.5984484669375693,
+        "ROC-AUC": 0.8550186659324462
+      },
+      "test_at_0.5": {
+        "Accuracy": 0.7889125799573561,
+        "Precision": 0.6237942122186495,
+        "Recall": 0.5187165775401069,
+        "F1": 0.5664233576642336,
+        "ROC-AUC": 0.8353285431042962
+      }
+    },
+    {
+      "model": "GradientBoosting (default params)",
+      "params_source": "library defaults",
+      "train": {
+        "Accuracy": 0.8325333333333333,
+        "Precision": 0.7333333333333333,
+        "Recall": 0.5812709030100335,
+        "F1": 0.6485074626865671,
+        "ROC-AUC": 0.8845104342967277
+      },
+      "test_at_0.5": {
+        "Accuracy": 0.7945984363894811,
+        "Precision": 0.6375404530744336,
+        "Recall": 0.5267379679144385,
+        "F1": 0.5768667642752562,
+        "ROC-AUC": 0.8378328009897966
+      }
+    },
+    {
+      "model": "XGBoost (notebook-tuned)",
+      "params_source": "notebook best params: n_estimators=50, max_depth=3, learning_rate=0.1, subsample=0.8, colsample_bytree=0.8",
+      "train": {
+        "Accuracy": 0.8170666666666667,
+        "Precision": 0.7001718213058419,
+        "Recall": 0.5451505016722408,
+        "F1": 0.613012410680707,
+        "ROC-AUC": 0.8674381108942641
+      },
+      "test_at_0.5": {
+        "Accuracy": 0.7938877043354655,
+        "Precision": 0.6409395973154363,
+        "Recall": 0.5106951871657754,
+        "F1": 0.5684523809523809,
+        "ROC-AUC": 0.8380204585574439
+      }
+    }
+  ],
+  "selected_test_at_threshold": {
+    "Accuracy": 0.7896233120113717,
+    "Precision": 0.5933014354066986,
+    "Recall": 0.6631016042780749,
+    "F1": 0.6262626262626263,
+    "ROC-AUC": 0.8380204585574439
+  },
+  "confusion_matrix_at_0.5": [
+    [
+      926,
+      107
+    ],
+    [
+      183,
+      191
+    ]
+  ],
+  "confusion_matrix_at_selected_threshold": [
+    [
+      863,
+      170
+    ],
+    [
+      126,
+      248
+    ]
+  ],
+  "classification_report_at_selected_threshold": {
+    "No Churn": {
+      "precision": 0.8725985844287159,
+      "recall": 0.8354307841239109,
+      "f1-score": 0.8536102868447082,
+      "support": 1033.0
+    },
+    "Churn": {
+      "precision": 0.5933014354066986,
+      "recall": 0.6631016042780749,
+      "f1-score": 0.6262626262626263,
+      "support": 374.0
+    },
+    "accuracy": 0.7896233120113717,
+    "macro avg": {
+      "precision": 0.7329500099177072,
+      "recall": 0.7492661942009928,
+      "f1-score": 0.7399364565536672,
+      "support": 1407.0
+    },
+    "weighted avg": {
+      "precision": 0.7983575512131974,
+      "recall": 0.7896233120113717,
+      "f1-score": 0.7931781439465571,
+      "support": 1407.0
+    }
+  },
+  "threshold_table": [
+    {
+      "threshold": 0.1,
+      "TN": 494,
+      "FP": 539,
+      "FN": 20,
+      "TP": 354,
+      "Accuracy": 0.6027,
+      "Precision": 0.3964,
+      "Recall": 0.9465,
+      "F1": 0.5588,
+      "ROC-AUC": 0.838
+    },
+    {
+      "threshold": 0.2,
+      "TN": 653,
+      "FP": 380,
+      "FN": 53,
+      "TP": 321,
+      "Accuracy": 0.6923,
+      "Precision": 0.4579,
+      "Recall": 0.8583,
+      "F1": 0.5972,
+      "ROC-AUC": 0.838
+    },
+    {
+      "threshold": 0.3,
+      "TN": 756,
+      "FP": 277,
+      "FN": 83,
+      "TP": 291,
+      "Accuracy": 0.7441,
+      "Precision": 0.5123,
+      "Recall": 0.7781,
+      "F1": 0.6178,
+      "ROC-AUC": 0.838
+    },
+    {
+      "threshold": 0.4,
+      "TN": 863,
+      "FP": 170,
+      "FN": 126,
+      "TP": 248,
+      "Accuracy": 0.7896,
+      "Precision": 0.5933,
+      "Recall": 0.6631,
+      "F1": 0.6263,
+      "ROC-AUC": 0.838
+    },
+    {
+      "threshold": 0.5,
+      "TN": 926,
+      "FP": 107,
+      "FN": 183,
+      "TP": 191,
+      "Accuracy": 0.7939,
+      "Precision": 0.6409,
+      "Recall": 0.5107,
+      "F1": 0.5685,
+      "ROC-AUC": 0.838
+    },
+    {
+      "threshold": 0.6,
+      "TN": 971,
+      "FP": 62,
+      "FN": 240,
+      "TP": 134,
+      "Accuracy": 0.7854,
+      "Precision": 0.6837,
+      "Recall": 0.3583,
+      "F1": 0.4702,
+      "ROC-AUC": 0.838
+    },
+    {
+      "threshold": 0.7,
+      "TN": 1012,
+      "FP": 21,
+      "FN": 291,
+      "TP": 83,
+      "Accuracy": 0.7783,
+      "Precision": 0.7981,
+      "Recall": 0.2219,
+      "F1": 0.3473,
+      "ROC-AUC": 0.838
+    },
+    {
+      "threshold": 0.8,
+      "TN": 1032,
+      "FP": 1,
+      "FN": 349,
+      "TP": 25,
+      "Accuracy": 0.7512,
+      "Precision": 0.9615,
+      "Recall": 0.0668,
+      "F1": 0.125,
+      "ROC-AUC": 0.838
+    },
+    {
+      "threshold": 0.9,
+      "TN": 1033,
+      "FP": 0,
+      "FN": 374,
+      "TP": 0,
+      "Accuracy": 0.7342,
+      "Precision": 0.0,
+      "Recall": 0.0,
+      "F1": 0.0,
+      "ROC-AUC": 0.838
+    }
+  ],
+  "feature_names_transformed": [
+    "num__tenure",
+    "num__MonthlyCharges",
+    "num__TotalCharges",
+    "num__NumberOfServices",
+    "cat__gender_Male",
+    "cat__SeniorCitizen_1",
+    "cat__Partner_Yes",
+    "cat__Dependents_Yes",
+    "cat__PhoneService_Yes",
+    "cat__MultipleLines_No",
+    "cat__MultipleLines_No phone service",
+    "cat__MultipleLines_Yes",
+    "cat__InternetService_DSL",
+    "cat__InternetService_Fiber optic",
+    "cat__InternetService_No",
+    "cat__OnlineSecurity_No",
+    "cat__OnlineSecurity_No internet service",
+    "cat__OnlineSecurity_Yes",
+    "cat__OnlineBackup_No",
+    "cat__OnlineBackup_No internet service",
+    "cat__OnlineBackup_Yes",
+    "cat__DeviceProtection_No",
+    "cat__DeviceProtection_No internet service",
+    "cat__DeviceProtection_Yes",
+    "cat__TechSupport_No",
+    "cat__TechSupport_No internet service",
+    "cat__TechSupport_Yes",
+    "cat__StreamingTV_No",
+    "cat__StreamingTV_No internet service",
+    "cat__StreamingTV_Yes",
+    "cat__StreamingMovies_No",
+    "cat__StreamingMovies_No internet service",
+    "cat__StreamingMovies_Yes",
+    "cat__Contract_Month-to-month",
+    "cat__Contract_One year",
+    "cat__Contract_Two year",
+    "cat__PaperlessBilling_Yes",
+    "cat__PaymentMethod_Bank transfer (automatic)",
+    "cat__PaymentMethod_Credit card (automatic)",
+    "cat__PaymentMethod_Electronic check",
+    "cat__PaymentMethod_Mailed check",
+    "cat__TenureGroup_Established",
+    "cat__TenureGroup_Loyal",
+    "cat__TenureGroup_New",
+    "cat__TenureGroup_Regular"
+  ],
+  "feature_importance_selected": {
+    "num__tenure": 0.03393038362264633,
+    "num__MonthlyCharges": 0.01479152962565422,
+    "num__TotalCharges": 0.011261435225605965,
+    "num__NumberOfServices": 0.008883016183972359,
+    "cat__gender_Male": 0.008020970970392227,
+    "cat__SeniorCitizen_1": 0.00808253325521946,
+    "cat__Partner_Yes": 0.002920785453170538,
+    "cat__Dependents_Yes": 0.012838281691074371,
+    "cat__PhoneService_Yes": 0.010840545408427715,
+    "cat__MultipleLines_No": 0.019854065030813217,
+    "cat__MultipleLines_No phone service": 0.006760443095117807,
+    "cat__MultipleLines_Yes": 0.0009288463043048978,
+    "cat__InternetService_DSL": 0.009596454910933971,
+    "cat__InternetService_Fiber optic": 0.10582026094198227,
+    "cat__InternetService_No": 0.0,
+    "cat__OnlineSecurity_No": 0.0679791197180748,
+    "cat__OnlineSecurity_No internet service": 0.0,
+    "cat__OnlineSecurity_Yes": 0.0,
+    "cat__OnlineBackup_No": 0.01823003962635994,
+    "cat__OnlineBackup_No internet service": 0.0,
+    "cat__OnlineBackup_Yes": 0.0,
+    "cat__DeviceProtection_No": 0.0,
+    "cat__DeviceProtection_No internet service": 0.0,
+    "cat__DeviceProtection_Yes": 0.01191784255206585,
+    "cat__TechSupport_No": 0.050368186086416245,
+    "cat__TechSupport_No internet service": 0.0,
+    "cat__TechSupport_Yes": 0.007026652805507183,
+    "cat__StreamingTV_No": 0.00531642185524106,
+    "cat__StreamingTV_No internet service": 0.0,
+    "cat__StreamingTV_Yes": 0.01400742493569851,
+    "cat__StreamingMovies_No": 0.009137825109064579,
+    "cat__StreamingMovies_No internet service": 0.0,
+    "cat__StreamingMovies_Yes": 0.017304304987192154,
+    "cat__Contract_Month-to-month": 0.3852989077568054,
+    "cat__Contract_One year": 0.015564851462841034,
+    "cat__Contract_Two year": 0.021419961005449295,
+    "cat__PaperlessBilling_Yes": 0.020254211500287056,
+    "cat__PaymentMethod_Bank transfer (automatic)": 0.0,
+    "cat__PaymentMethod_Credit card (automatic)": 0.004678697790950537,
+    "cat__PaymentMethod_Electronic check": 0.043703217059373856,
+    "cat__PaymentMethod_Mailed check": 0.005741799250245094,
+    "cat__TenureGroup_Established": 0.0,
+    "cat__TenureGroup_Loyal": 0.027976661920547485,
+    "cat__TenureGroup_New": 0.014813276939094067,
+    "cat__TenureGroup_Regular": 0.004730955231934786
+  },
+  "logreg_coefficients": {
+    "num__tenure": -1.3431572576354618,
+    "num__MonthlyCharges": -1.612832301694611,
+    "num__TotalCharges": 0.3527550998286429,
+    "num__NumberOfServices": 0.5307187052091863,
+    "cat__gender_Male": -0.022175292265320272,
+    "cat__SeniorCitizen_1": 0.20656741564163295,
+    "cat__Partner_Yes": -0.015417833030610402,
+    "cat__Dependents_Yes": -0.21507752301935146,
+    "cat__PhoneService_Yes": 0.04667168496678304,
+    "cat__MultipleLines_No": -0.2842524485819795,
+    "cat__MultipleLines_No phone service": -0.700540789277518,
+    "cat__MultipleLines_Yes": 0.33092413354060857,
+    "cat__InternetService_DSL": -1.1473179324461638,
+    "cat__InternetService_Fiber optic": 1.019918139830592,
+    "cat__InternetService_No": -0.5264693117016488,
+    "cat__OnlineSecurity_No": 0.1511615063709274,
+    "cat__OnlineSecurity_No internet service": -0.5264693117016488,
+    "cat__OnlineSecurity_Yes": -0.2785612989848201,
+    "cat__OnlineBackup_No": 0.0385541342617111,
+    "cat__OnlineBackup_No internet service": -0.5264693117016488,
+    "cat__OnlineBackup_Yes": -0.16595392687810712,
+    "cat__DeviceProtection_No": -0.0787507319962293,
+    "cat__DeviceProtection_No internet service": -0.5264693117016488,
+    "cat__DeviceProtection_Yes": -0.04864906062016828,
+    "cat__TechSupport_No": 0.12597458753518842,
+    "cat__TechSupport_No internet service": -0.5264693117016488,
+    "cat__TechSupport_Yes": -0.2533743801476269,
+    "cat__StreamingTV_No": -0.32642095948415684,
+    "cat__StreamingTV_No internet service": -0.5264693117016488,
+    "cat__StreamingTV_Yes": 0.19902116686695548,
+    "cat__StreamingMovies_No": -0.3087008192382631,
+    "cat__StreamingMovies_No internet service": -0.5264693117016488,
+    "cat__StreamingMovies_Yes": 0.18130102662142883,
+    "cat__Contract_Month-to-month": 0.558889091456804,
+    "cat__Contract_One year": -0.24562238110551488,
+    "cat__Contract_Two year": -0.9671358146657716,
+    "cat__PaperlessBilling_Yes": 0.2935463927089499,
+    "cat__PaymentMethod_Bank transfer (automatic)": -0.2879689412288952,
+    "cat__PaymentMethod_Credit card (automatic)": -0.22799144476738747,
+    "cat__PaymentMethod_Electronic check": 0.08351877426497271,
+    "cat__PaymentMethod_Mailed check": -0.2214274925864646,
+    "cat__TenureGroup_Established": -0.2635917777458564,
+    "cat__TenureGroup_Loyal": 0.4005915560586573,
+    "cat__TenureGroup_New": -0.22366477035406698,
+    "cat__TenureGroup_Regular": -0.5672041122772998
+  }
+}

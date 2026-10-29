@@ -1,0 +1,4 @@
+Feature,Min,Q1 (25%),Median (50%),Q3 (75%),Max,IQR,Lower Bound,Upper Bound,Outlier Count,Outlier %
+tenure,1.0,9.0,29.0,55.0,72.0,46.0,-60.0,124.0,0,0.0
+MonthlyCharges,18.25,35.59,70.35,89.86,118.75,54.27,-45.82,171.27,0,0.0
+TotalCharges,18.8,401.45,1397.47,3794.74,8684.8,3393.29,-4688.48,8884.67,0,0.0
