@@ -226,26 +226,3 @@ python -m pytest tests\ -v
 
 ---
 
-## 7. Dashboard Pages Overview
-
-1. **Executive Overview:** High-level KPI summary (customers, churned, billing at risk), problem statement, and 6-stage ML pipeline diagram.
-2. **Dataset Explorer:** Deep inspection of raw and processed datasets with interactive column filters, search, sorting, and CSV export.
-3. **Data Quality & Preprocessing:** Missing-value and blank-string audits, outlier boundaries (IQR), duplicate detection, and before/after comparisons.
-4. **Exploratory Data Analysis:** Interactive distributions, box/violin plots, Pearson correlation matrix, and 2-way cross-segment churn heatmaps.
-5. **Feature Analysis:** Top 20 tree importances, Logistic Regression log-odds multipliers, global SHAP values, and feature business explanations.
-6. **Model Training & Evaluation:** Comprehensive model benchmark comparison, interactive threshold slider with real-time KPI re-calculation, ROC/PR curves, and confusion matrix diagnostics.
-7. **Business Insights & Reports:** Strategic recommendations ('Lock & Save' campaigns, onboarding care), financial exposure analysis, and downloadable markdown/CSV summaries.
-8. **Prediction Interface:** 
-   - *Single Customer:* Form input with probability gauge, risk tier categorization (Low/Medium/High), score contribution breakdown, and personalized retention actions.
-   - *Batch Prediction:* CSV/Excel upload, strict validation with downloadable diagnostic error log for rejected rows, probability histogram, and downloadable scored predictions CSV.
-
----
-
-## 8. Troubleshooting & FAQ
-
-- **Issue: `ModuleNotFoundError: No module named 'src'`**
-  - *Solution:* Run commands from the project root directory (`D:\MlProject\Customer-Churn-Prediction-main`). All entry scripts automatically configure `sys.path`.
-- **Issue: Streamlit port already in use**
-  - *Solution:* Launch with a custom port: `python -m streamlit run app.py --server.port 8502`.
-- **Issue: XGBoost or SHAP warning**
-  - *Solution:* Ensure `xgboost` and `shap` are installed via `requirements.txt`. The platform gracefully handles environments where optional libraries are absent.
