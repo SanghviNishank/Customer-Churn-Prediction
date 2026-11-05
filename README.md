@@ -188,11 +188,11 @@ python -m pip install -r requirements.txt
 ## 6. Execution Commands
 
 ### Launch the Analytics Dashboard
-You can run the dashboard from the project root using either command:
+Run the dashboard from the project root:
 ```powershell
 python -m streamlit run app.py
 ```
-*or directly from the dashboard folder:*
+The direct dashboard entry point is also available:
 ```powershell
 python -m streamlit run dashboard/app.py
 ```
