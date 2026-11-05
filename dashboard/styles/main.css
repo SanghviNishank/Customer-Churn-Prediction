@@ -25,13 +25,14 @@ div[data-testid="stMetric"] {
 
 div[data-testid="stMetric"] label {
   font-weight: 600;
-  color: #4a5568;
+  color: var(--text-color, #4a5568);
 }
 
 /* Card Container */
 .churn-card {
-  background: white;
-  border: 1px solid #e2e8f0;
+  color: var(--text-color, #1f2937);
+  background: var(--secondary-background-color, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 16px;

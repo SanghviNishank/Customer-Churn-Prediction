@@ -69,22 +69,22 @@ def render(raw: pd.DataFrame, df: pd.DataFrame, meta: dict | None):
         """
         <div style="background-color: rgba(128,128,128,0.06); padding: 20px; border-radius: 10px; border: 1px solid rgba(128,128,128,0.2);">
             <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
-                <div style="flex: 1; min-width: 150px; background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #0072B2;">
+                <div style="flex: 1; min-width: 150px; background: var(--secondary-background-color, #ffffff); color: var(--text-color, #1f2937); padding: 12px; border-radius: 8px; border-left: 4px solid #0072B2;">
                     <strong>1. Ingestion</strong><br><small>7,043 rows, 21 raw columns (CSV / Excel)</small>
                 </div>
-                <div style="flex: 1; min-width: 150px; background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #009E73;">
+                <div style="flex: 1; min-width: 150px; background: var(--secondary-background-color, #ffffff); color: var(--text-color, #1f2937); padding: 12px; border-radius: 8px; border-left: 4px solid #009E73;">
                     <strong>2. Cleaning</strong><br><small>Drop 11 blank TotalCharges, remove customerID</small>
                 </div>
-                <div style="flex: 1; min-width: 150px; background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #E69F00;">
+                <div style="flex: 1; min-width: 150px; background: var(--secondary-background-color, #ffffff); color: var(--text-color, #1f2937); padding: 12px; border-radius: 8px; border-left: 4px solid #E69F00;">
                     <strong>3. Feature Engineering</strong><br><small>TenureGroup (4 bins), NumberOfServices (0-6)</small>
                 </div>
-                <div style="flex: 1; min-width: 150px; background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #D55E00;">
+                <div style="flex: 1; min-width: 150px; background: var(--secondary-background-color, #ffffff); color: var(--text-color, #1f2937); padding: 12px; border-radius: 8px; border-left: 4px solid #D55E00;">
                     <strong>4. Preprocessing</strong><br><small>ColumnTransformer: StandardScaler + OneHotEncoder</small>
                 </div>
-                <div style="flex: 1; min-width: 150px; background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #7F7F7F;">
+                <div style="flex: 1; min-width: 150px; background: var(--secondary-background-color, #ffffff); color: var(--text-color, #1f2937); padding: 12px; border-radius: 8px; border-left: 4px solid #7F7F7F;">
                     <strong>5. Model Tuning</strong><br><small>Stratified 80/20 split, 5-fold CV, XGBoost (Best)</small>
                 </div>
-                <div style="flex: 1; min-width: 150px; background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #0072B2;">
+                <div style="flex: 1; min-width: 150px; background: var(--secondary-background-color, #ffffff); color: var(--text-color, #1f2937); padding: 12px; border-radius: 8px; border-left: 4px solid #0072B2;">
                     <strong>6. Threshold & Serving</strong><br><small>Optimal 0.40 cutoff, SHAP explainability</small>
                 </div>
             </div>

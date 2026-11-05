@@ -1,9 +1,9 @@
 {
-  "created_utc": "2026-10-29T08:58:11+00:00",
+  "created_utc": "2026-11-01T20:35:01+00:00",
   "versions": {
     "python": "3.12.10",
     "scikit-learn": "1.9.1",
-    "pandas": "2.2.3",
+    "pandas": "3.1.0",
     "numpy": "2.5.4",
     "xgboost": "3.4.1"
   },

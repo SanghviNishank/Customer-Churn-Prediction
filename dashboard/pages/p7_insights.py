@@ -23,8 +23,8 @@ def render(df: pd.DataFrame, meta: dict | None):
     f1, f2, f3 = st.columns(3)
     annualized_lost_rev = kpis['lost_monthly_revenue'] * 12
     f1.metric("Monthly Billing from Churners", format_currency(kpis['lost_monthly_revenue']))
-    f2.metric("Annualized Churn Revenue at Risk", format_currency(annualized_lost_rev), help_text="12-month projection assuming churn continues unmitigated.")
-    f3.metric("Churn Billing Concentration", format_percentage(kpis['lost_monthly_share']), help_text="Share of telecom monthly billing associated with churners.")
+    f2.metric("Annualized Churn Revenue at Risk", format_currency(annualized_lost_rev), help="12-month projection assuming churn continues unmitigated.")
+    f3.metric("Churn Billing Concentration", format_percentage(kpis['lost_monthly_share']), help="Share of telecom monthly billing associated with churners.")
 
     st.markdown("### 📌 Verified Empirical Findings (from `CustomerFinal.ipynb`)")
     st.markdown(
@@ -61,7 +61,7 @@ def render(df: pd.DataFrame, meta: dict | None):
             f"""
             <div style="background-color: rgba(128,128,128,0.06); padding: 14px 18px; border-radius: 8px; margin-bottom: 12px; border-left: 4px solid #0072B2;">
                 <strong style="font-size: 1.05rem;">{title}</strong><br>
-                <span style="color: #4A5568;">{desc}</span>
+                <span style="color: var(--text-color, #4A5568);">{desc}</span>
             </div>
             """,
             unsafe_allow_html=True,
